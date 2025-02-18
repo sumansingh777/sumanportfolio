@@ -1,120 +1,33 @@
-Here's a professional README.md file for your portfolio:
 
-```markdown
-# Suman Kumar's Portfolio 🌟
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
+<!--
+  <<< Author notes: Step 2 >>>
+  Start this step by acknowledging the previous step.
+  Define terms and link to docs.github.com.
+  Historic note: previous version checked for empty pull request, changed to the correct theme `minima`.
+-->
 
-A modern, interactive portfolio showcasing technical expertise in full-stack development, 3D animation, and cybersecurity. Built with cutting-edge web technologies and featuring immersive 3D visualizations.
+## Step 2: Configure your site
 
-![Portfolio Preview](https://via.placeholder.com/800x400.png?text=Portfolio+Preview) <!-- Replace with actual screenshot -->
+_You turned on GitHub Pages! :tada:_
 
-## 🚀 Features
+We'll work in a branch, `my-pages`, that I created for you to get this site looking great. :sparkle:
 
-- **Immersive 3D Visualizations** using Three.js
-- **Responsive Design** for all screen sizes
-- **Interactive Project Showcase** with live demos
-- **Dynamic Skill Visualization** with animated badges
-- **Theme Switching** (Light/Dark modes)
-- **Smooth Scroll Navigation**
-- **Contact Form** with email integration
-- **Education & Certification** showcase
-- **Social Media Integration**
+Jekyll uses a file titled `_config.yml` to store settings for your site, your theme, and reusable content like your site title and GitHub handle. You can check out the `_config.yml` file on the **Code** tab of your repository.
 
-## 📦 Installation
+We need to use a blog-ready theme. For this activity, we will use a theme named "minima".
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/portfolio.git
-```
+### :keyboard: Activity: Configure your site
 
-2. Open in browser:
-```bash
-cd portfolio && open index.html
-```
+1. Browse to the `_config.yml` file in the `my-pages` branch.
+1. In the upper right corner, open the file editor.
+1. Add a `theme:` set to **minima** so it shows in the `_config.yml` file as below:
+   ```yml
+   theme: minima
+   ```
+1. (optional) You can modify the other configuration variables such as `title:`, `author:`, and `description:` to further customize your site.
+1. Commit your changes.
+1. (optional) Create a pull request to view all the changes you'll make throughout this course. Click the **Pull Requests** tab, click **New pull request**, set `base: main` and `compare:my-pages`.
+1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
 
-## 🛠️ Technologies Used
 
-- **Frontend**: HTML5, CSS3, JavaScript
-- **3D Graphics**: Three.js, WebGL
-- **Styling**: CSS Gradients, Animations
-- **Icons**: Font Awesome
-- **Fonts**: Google Fonts (Poppins)
-
-## 🎮 Live Demo
-
-[View Live Portfolio](https://yourportfolio.com) <!-- Add your actual domain -->
-
-## 📄 Project Structure
-
-```
-portfolio/
-├── index.html
-├── styles/
-│   └── main.css
-├── scripts/
-│   └── main.js
-├── assets/
-│   ├── images/
-│   └── models/
-```
-
-## 🌟 Key Sections
-
-1. **About Me**: Personal introduction with stats
-2. **Projects**: Featured work with code links
-3. **Skills**: Technical expertise visualization
-4. **Education**: Academic background
-5. **Certifications**: Professional credentials
-6. **3D Gallery**: Interactive animations
-7. **Contact**: Reach-out form
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📜 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-## 🙏 Acknowledgments
-
-- [Three.js](https://threejs.org/) for 3D graphics
-- [Google Fonts](https://fonts.google.com/) for typography
-- [Font Awesome](https://fontawesome.com/) for icons
-- [Shields.io](https://shields.io/) for badges
-
----
-
-**Suman Kumar**  
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sumansingh777)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sumankumar-/)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourhandle)
-
-```
-
-To use this README:
-
-1. Replace placeholder content (suman, github,io, etc.)
-2. Add actual screenshots in the designated section
-3. Add LICENSE file if needed
-4. Customize sections according to your specific needs
-5. Add any additional badges from https://shields.io/
-
-This README provides:
-- Clear project overview
-- Technology stack visibility
-- Easy navigation
-- Professional presentation
-- Contribution guidelines
-- Social proof elements
-- Comprehensive documentation
