@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suman Kumar's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    .profile-pic-container {
+        position: relative;
+        margin: 0 auto 20px;
+        width: 200px;
+        height: 200px;
+    }
+    
+    .profile-pic {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 4px solid white;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        object-fit: cover;
+    }
+    
+    .header-content {
+        position: relative;
+        z-index: 1;
+    }
+    :root {
+      --primary-color: #2A2A72;
+      --secondary-color: #009FFD;
+    }
+
+    body { 
+      font-family: 'Poppins', sans-serif;
+      margin: 0; 
+      padding: 0; 
+      background: linear-gradient(135deg, #89f7fe, #66a6ff); 
+      overflow-x: hidden; 
+    }
+
+    header { 
+      background-color: var(--primary-color); 
+      color: white; 
+      padding: 1.5em; 
+      text-align: center; 
+      font-size: 2.5em; 
+      animation: fadeIn 2s ease-in-out; 
+      position: relative;
+      overflow: hidden;
+    }
+
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    nav { 
+      text-align: center; 
+      margin: 20px 0; 
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      z-index: 1000;
+      padding: 10px;
+      backdrop-filter: blur(10px);
+    }
+
+    nav a { 
+      margin: 0 20px; 
+      text-decoration: none; 
+      color: var(--primary-color); 
+      font-weight: bold; 
+      transition: all 0.3s; 
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+
+    nav a:hover { 
+      color: white;
+      background: var(--secondary-color); 
+      transform: scale(1.1);
+    }
+
+    section { 
+      padding: 30px; 
+      margin: 30px; 
+      background: rgba(255, 255, 255, 0.95); 
+      border-radius: 20px; 
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3); 
+      transition: transform 0.3s; 
+    }
+
+    section:hover { 
+      transform: translateY(-10px); 
+    }
+
+    .project-card { 
+      padding: 20px; 
+      border-radius: 12px; 
+      margin-bottom: 20px; 
+      background: linear-gradient(120deg, #a1c4fd, #c2e9fb); 
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: scale(1.02);
+    }
+
+    .project-links {
+      margin-top: 15px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .project-links a {
+      padding: 8px 15px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .project-links a:hover {
+      background: var(--secondary-color);
+    }
+
+    #animation-container {
+      width: 100%;
+      height: 400px;
+      background: #1a1a1a;
+      border-radius: 15px;
+      margin: 20px 0;
+    }
+
+    .skill-badge {
+      display: inline-block;
+      padding: 8px 15px;
+      margin: 5px;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      border-radius: 20px;
+      font-size: 0.9em;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 15px;
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contact-form button {
+      background: var(--primary-color);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: var(--secondary-color);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        margin: 15px;
+        padding: 20px;
+      }
+      
+      nav a {
+        margin: 0 10px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="particles" id="particles"></div>
+    🌟 Welcome to Suman Kumar 🌟
+        <div class="particles" id="particles"></div>
+    <div class="profile-pic-container">
+        <img src="IMG_20250219_012318.jpg" alt="Suman Kumar" class="profile-pic">
+    </div>
+    <div class="header-content">
+    <p class="tagline"> Software Developer | Security Enthusiast</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about"><i class="fas fa-user"></i> About</a>
+    <a href="#projects"><i class="fas fa-code"></i> Projects</a>
+    <a href="#skills"><i class="fas fa-cogs"></i> Skills</a>
+    <a href="#gallery"><i class="fas fa-photo-video"></i> Gallery</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <p>Hello! I'm Suman Kumar, a dedicated B.Sc. CSDA student and full-stack developer with expertise in 3D animation and AI development. My passion lies at the intersection of creative technology and practical implementation.</p>
+      <div class="stats">
+        <div class="stat-item">
+          <h3>5+</h3>
+          <p>Projects Completed</p>
+        </div>
+        <div class="stat-item">
+          <h3>1+</h3>
+          <p>Years Experience</p>
+        </div>
+        <div class="stat-item">
+          <h3>90%</h3>
+          <p>Coding Proficiency</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="project-card">
+      <h3>💬 EmBot - Emotional Support AI</h3>
+      <p>Advanced NLP chatbot with sentiment analysis using Python, TensorFlow, and Twilio API. Features real-time emotional recognition and adaptive response system.</p>
+      <div class="project-links">
+        <a href="#"><i class="fab fa-github"></i> View Code</a>
+        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>🎮 Neon Jump - 3D Platformer</h3>
+      <p>Optimized 3D game built with Unity and C#, featuring custom shaders and physics-based gameplay mechanics. Won "Best Student Project" at GameDev Challenge 2023.</p>
+      <div class="project-links">
+        <a href="#"><i class="fab fa-github"></i> View Code</a>
+        <a href="#"><i class="fas fa-download"></i> Download</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>🌐 Network Security Simulator</h3>
+      <p>Interactive cybersecurity training environment with simulated attacks and defense mechanisms. Built with Cisco Packet Tracer and Python.</p>
+      <div class="project-links">
+        <a href="#"><i class="fab fa-github"></i> View Code</a>
+        <a href="#"><i class="fas fa-book"></i> Documentation</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Expertise</h2>
+    <div class="skills-container">
+      <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
+      <span class="skill-badge"><i class="fab fa-java"></i> Java</span>
+      <span class="skill-badge"><i class="fab fa-js"></i> JavaScript</span>
+      <span class="skill-badge"><i class="fas fa-cube"></i> Three.js</span>
+      <span class="skill-badge"><i class="fas fa-brain"></i> TensorFlow</span>
+      <span class="skill-badge"><i class="fas fa-database"></i> SQL</span>
+      <span class="skill-badge"><i class="fab fa-unity"></i> Unity</span>
+      <span class="skill-badge"><i class="fas fa-shield-alt"></i> Cybersecurity</span>
+    </div>
+  </section>
+
+  <section id="frameworks">
+    <h2>Frameworks & Libraries</h2>
+    <div class="skills-container">
+      <span class="skill-badge">React</span>
+      <span class="skill-badge">Angular</span>
+      <span class="skill-badge">Vue.js</span>
+      <span class="skill-badge">Django</span>
+      <span class="skill-badge">Flask</span>
+      <span class="skill-badge">Node.js</span>
+      <span class="skill-badge">Express.js</span>
+      <span class="skill-badge">Bootstrap</span>
+    </div>
+  </section>
+
+  <section id="tools">
+    <h2>Tools & Platforms</h2>
+    <div class="skills-container">
+      <span class="skill-badge">Git</span>
+      <span class="skill-badge">GitHub</span>
+      <span class="skill-badge">Visual Studio Code</span>
+      <span class="skill-badge">Eclipse</span>
+      <span class="skill-badge">PyCharm</span>
+      <span class="skill-badge">IntelliJ IDEA</span>
+      <span class="skill-badge">Unity</span>
+      <span class="skill-badge">Unity Editor</span>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="skills-container">
+      <span class="skill-badge">Cisco CCNA</span>
+      <span class="skill-badge">CompTIA Security+</span>
+      <span class="skill-badge">AWS Certified Developer</span>
+      <span class="skill-badge">Google IT Support</span>
+      <span class="skill-badge">Microsoft Azure Fundamentals</span>
+      <span class="skill-badge">IBM Data Science</span>
+      <span class="skill-badge">Unity Certified Developer</span>
+      <span class="skill-badge">Coursera Python</span>
+    </div>
+  </section>
+  <section id="education">
+    <h2>Education</h2>
+    <div class="education-container">
+      <div class="education-item">
+        <h3>B.Sc. Computer Science and Engineering</h3>
+        <p>Indian Institute of Technology, Patna</p>
+        <p>2023 - Present</p>
+      </div>
+      <div class="education-item">
+        <h3>Senior Secondary </h3>
+        <p>R.P.S college Patna</p>
+        <p>2021 - 2023</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>3D Animation Showcase</h2>
+    <div id="animation-container"></div>
+    <div class="animation-controls">
+      <button onclick="startRotation()"><i class="fas fa-play"></i> Start</button>
+      <button onclick="stopRotation()"><i class="fas fa-stop"></i> Stop</button>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+    </form>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Suman Kumar. Crafted with 💙 and creativity.</p>
+    <div class="theme-switcher">
+      <button onclick="toggleTheme()"><i class="fas fa-sun"></i> Light Theme</button>
+      <button onclick="toggleTheme()"><i class="fas fa-moon"></i> Toggle Theme</button>
+    </div>
+  </footer>
+
+  <script>
+    // 3D Animation using Three.js
+    let renderer, scene, camera, cube;
+    let rotate = false;
+
+    function initThreeJS() {
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(document.getElementById('animation-container').clientWidth, 400);
+      document.getElementById('animation-container').appendChild(renderer.domElement);
+
+      const geometry = new THREE.BoxGeometry(2, 2, 2);
+      const material = new THREE.MeshPhongMaterial({ 
+        color: 0x009FFD,
+        wireframe: true
+      });
+      cube = new THREE.Mesh(geometry, material);
+      scene.add(cube);
+
+      const light = new THREE.PointLight(0xffffff, 1, 100);
+      light.position.set(10, 10, 10);
+      scene.add(light);
+
+      camera.position.z = 5;
+
+      animate();
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      if(rotate) cube.rotation.x += 0.01;
+      if(rotate) cube.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+
+    function startRotation() { rotate = true; }
+    function stopRotation() { rotate = false; }
+
+    // Theme Toggle
+    function toggleTheme() {
+      document.body.classList.toggle('dark-theme');
+    }
+
+    // Initialize 3D scene
+    window.onload = initThreeJS;
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
